@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="tr" >
+<head>
+    <meta charset="UTF-8" />
+    <title>Sohbet Odası</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js" type="module"></script>
+</head>
+<body data-username="{{ username }}">
+    <div class="container">
+        <aside class="sidebar">
+            <div class="user-buttons">
+                <button id="logoutBtn" class="btn btn-danger">Çıkış Yap</button>
+                <button id="settingsBtn" class="btn btn-primary">Ayarlar</button>
+            </div>
+            <h3>Çevrim İçi Kullanıcılar (<span id="userCount">0</span>)</h3>
+            <ul id="userList" class="user-list"></ul>
+        </aside>
+
+        <main class="chat-main">
+            <div id="chatBox" class="chat-box"></div>
+
+            <div class="input-area">
+                <input id="messageInput" type="text" placeholder="Mesaj yaz..." autocomplete="off" />
+                <button id="emojiBtn" class="btn-emoji" title="Emoji Seçici">😊</button>
+                <emoji-picker id="emojiPicker" style="display:none; position:absolute; bottom:60px; right:20px; z-index:1000;"></emoji-picker>
+                <button id="sendBtn" class="btn btn-send">Gönder</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+/* Genel ayarlar */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #18191c;
+    color: #dcddde;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    background-color: #2f3136;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.btn {
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+    background-color: #f04747;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #d93636;
+}
+
+.btn-primary {
+    background-color: #5865f2;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #4752c4;
+}
+
+/* Kullanıcı listesi */
+.user-list {
+    list-style: none;
+    padding-left: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    margin: 0;
+    border-radius: 8px;
+    background-color: #202225;
+}
+
+.user-list li {
+    padding: 8px 12px;
+    border-bottom: 1px solid #36393f;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.user-list li:hover {
+    background-color: #5865f2;
+    color: white;
+}
+
+.user-list li.selected {
+    background-color: #5865f2;
+    color: white;
+    font-weight: 700;
+}
+
+/* Chat ana alan */
+.chat-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    position: relative;
+}
+
+/* Mesaj kutusu */
+.chat-box {
+    background-color: #2f3136;
+    border-radius: 8px;
+    padding: 15px;
+    flex-grow: 1;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #5865f2 #202225;
+}
+
+/* Scrollbar Chrome, Safari, Edge */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: #202225;
+    border-radius: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: #5865f2;
+    border-radius: 8px;
+    border: 2px solid #202225;
+}
+
+/* Mesajlar */
+.message {
+    background-color: #36393f;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    max-width: 75%;
+    word-wrap: break-word;
+    color: #dcddde;
+}
+
+.message.self {
+    color: white !important;
+    margin-left: auto;
+    text-align: right;
+}
+
+.message.system {
+    background-color: transparent;
+    color: #72767d;
+    font-style: italic;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.message strong {
+    font-weight: 600;
+    margin-right: 8px;
+}
+
+.message .timestamp {
+    font-size: 0.75rem;
+    color: #72767d;
+}
+
+/* Mesaj alanı ve butonlar */
+.input-area {
+    display: flex;
+    padding: 10px 0 0 0;
+    align-items: center;
+    position: relative;
+}
+
+#messageInput {
+    flex-grow: 1;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #40444b;
+    color: #dcddde;
+    font-size: 1rem;
+    outline: none;
+}
+
+.btn-send {
+    background-color: #5865f2;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-send:hover {
+    background-color: #4752c4;
+}
+
+.btn-emoji {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #dcddde;
+    cursor: pointer;
+    margin-left: 10px;
+    user-select: none;
+}
+
+/* Emoji picker kutusu zaten chat.html’de inline position ile ayarlandı */
